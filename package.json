@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":  "node index.js",
+    "dev": "node index.js",
     "test": "PORT=80 node index.js"
   },
   "repository": {
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/fredeil/privat#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+     "moment": "^2.12.0"
   }
 }
