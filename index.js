@@ -16,6 +16,13 @@ app.get('/about', (req, res) => {
 })
 
 
+app.use(function(req, res, next) {
+res.setHeader('Content-type', 'text/plain')
+res.status(404).send('Error 404. \n Page not found.')
+console.log('404')
+})
+
+
 app.listen(PORT, ()=> {
   console.log(`Server online at port ${PORT}`)
 })
