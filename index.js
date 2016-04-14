@@ -1,8 +1,12 @@
 var express = require('express');
+var moment  = require('moment');
+
 var app = express();
 var PORT = process.env.PORT || 3000
 var path = require('path');
-var date = new Date();
+
+moment.locale("nb");
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -17,7 +21,8 @@ app.get('/about', (req, res) => {
 app.use(function(req, res, next) {
 res.status(404)
 res.sendFile(path.join(__dirname, 'index.html'));
-console.log(`Error 404. \n${date}`);
+var date = moment().format("LLL");
+console.log(`Error 404. \n${date}\n`);
 });
 
 app.listen(PORT, ()=> {
