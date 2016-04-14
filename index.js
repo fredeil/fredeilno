@@ -6,7 +6,7 @@ var PORT = process.env.PORT || 3000
 var path = require('path');
 
 moment.locale("nb");
-
+moment().utcOffset(60);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
