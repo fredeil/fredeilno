@@ -19,6 +19,7 @@
   "homepage": "https://github.com/fredeil/privat#readme",
   "dependencies": {
     "express": "^4.13.4",
-    "moment":  "^2.12.0"
+    "moment": "^2.12.0",
+    "moment-timezone": "^0.5.3"
   }
 }

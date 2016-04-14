@@ -1,12 +1,14 @@
 var express = require('express');
-var moment  = require('moment');
+var moment  = require('moment-timezone');
+
 
 var app = express();
 var PORT = process.env.PORT || 3000
 var path = require('path');
 
+
+
 moment.locale("nb");
-moment().utcOffset(60);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -21,7 +23,8 @@ app.get('/about', (req, res) => {
 app.use(function(req, res, next) {
 res.status(404)
 res.sendFile(path.join(__dirname, 'index.html'));
-var date = moment().format("LLL");
+
+var date = moment.tz("Europe/Oslo").format("LLL")
 console.log(`Error 404. \n${date}\n`);
 });
 
