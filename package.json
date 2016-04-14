@@ -1,0 +1,23 @@
+{
+  "name": "privatside",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev":  "node index.js",
+    "test": "PORT=80 node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredeil/privat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredeil/privat/issues"
+  },
+  "homepage": "https://github.com/fredeil/privat#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
