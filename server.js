@@ -1,12 +1,14 @@
+var path    = require('path');
 var express = require('express');
 var moment  = require('moment-timezone');
+var PORT    = process.env.PORT || 3000;
+
 var app = express();
-var PORT = process.env.PORT || 3000
-var path = require('path');
+
+
 
 // Set norwegian local time
 moment.locale("nb");
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 
