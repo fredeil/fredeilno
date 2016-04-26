@@ -9,7 +9,7 @@ var app = express();
 
 // create a write stream (in append mode)
 var accessLogStream = fs.createWriteStream(__dirname + '/log/access.log', {flags: 'a'})
-app.use(morgan(':remote-addr -date[clf]', {stream: accessLogStream}))
+app.use(morgan(':remote-addr - :date[clf]', {stream: accessLogStream}))
 
 // Set norwegian local time
 moment.locale("nb");
