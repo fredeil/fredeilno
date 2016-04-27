@@ -17,12 +17,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // route index file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
 // route NCS website
-app.get('/ncs', (req, res) => {
-  res.sendFile(path.join(__dirname, 'about.html'));
+app.get('/jodel', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/jodel.html'));
 });
 
 
