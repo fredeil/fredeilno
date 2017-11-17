@@ -9,7 +9,6 @@ var app = express();
 
 // create a write stream (in append mode)
 var accessLogStream = fs.createWriteStream(__dirname + '/log/access.log', {flags: 'a'})
-app.use(morgan(':remote-addr - :date[clf]', {stream: accessLogStream}))
 
 // Set norwegian local time
 moment.locale("nb");
@@ -29,7 +28,7 @@ app.get('/jodel', (req, res) => {
 // Error 404. Send back to index file.
 app.use(function(req, res, next) {
 res.status(404);
-res.sendFile(path.join(__dirname, 'index.html'));
+res.sendFile(path.join(__dirname, '/public/index.html'));
 var date = moment.tz("Europe/Oslo").format("LLL"); // Send norwegian timestamp to server located in germany
 console.log(`Error 404. \n${date}\n`);
 });
