@@ -20,7 +20,7 @@ app.get('/', (req, res) =>
 // route hotdog page
 app.get('/hotdog', (req, res) => 
 {
-  res.sendFile(path.join(__dirname, '/hotdog.html'));
+  res.sendFile(path.join(__dirname, 'hotdog.html'));
 });
 
 
@@ -28,7 +28,7 @@ app.get('/hotdog', (req, res) =>
 app.use(function(req, res, next) 
 {
   res.status(404);
-  res.sendFile(path.join(__dirname, '/index.html'));
+  res.sendFile(path.join(__dirname, '/public/index.html'));
   var date = moment.tz("Europe/Oslo").format("LLL");
   console.log(`Error 404 at ${date}\n`);
 });
