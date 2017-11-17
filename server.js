@@ -12,23 +12,25 @@ moment.locale("nb");
 app.use(express.static(path.join(__dirname, 'public')));
 
 // route index file
-app.get('/', (req, res) => {
+app.get('/', (req, res) => 
+{
   res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-// route hotdog website
-app.get('/hotdog', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/hotdog.html'));
+// route hotdog page
+app.get('/hotdog', (req, res) => 
+{
+  res.sendFile(path.join(__dirname, '/hotdog.html'));
 });
 
 
 // Error 404. Send back to index file.
-app.use(function(req, res, next) {
-res.status(404);
-res.sendFile(path.join(__dirname, '/public/index.html'));
-
-var date = moment.tz("Europe/Oslo").format("LLL");
-console.log(`Error 404. \n${date}\n`);
+app.use(function(req, res, next) 
+{
+  res.status(404);
+  res.sendFile(path.join(__dirname, '/index.html'));
+  var date = moment.tz("Europe/Oslo").format("LLL");
+  console.log(`Error 404 at ${date}\n`);
 });
 
 
