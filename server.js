@@ -1,14 +1,11 @@
-var fs      = require('fs');
-var path    = require('path');
-var morgan  = require('morgan');
-var express = require('express');
-var moment  = require('moment-timezone');
+const fs      = require('fs');
+const path    = require('path');
+const morgan  = require('morgan');
+const express = require('express');
+const moment  = require('moment-timezone');
 
-var PORT    = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 var app = express();
-
-// create a write stream (in append mode)
-var accessLogStream = fs.createWriteStream(__dirname + '/log/access.log', {flags: 'a'})
 
 // Set norwegian local time
 moment.locale("nb");
@@ -19,9 +16,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-// route NCS website
-app.get('/jodel', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/jodel.html'));
+// route hotdog website
+app.get('/hotdog', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/hotdog.html'));
 });
 
 
@@ -29,7 +26,8 @@ app.get('/jodel', (req, res) => {
 app.use(function(req, res, next) {
 res.status(404);
 res.sendFile(path.join(__dirname, '/public/index.html'));
-var date = moment.tz("Europe/Oslo").format("LLL"); // Send norwegian timestamp to server located in germany
+
+var date = moment.tz("Europe/Oslo").format("LLL");
 console.log(`Error 404. \n${date}\n`);
 });
 
