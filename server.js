@@ -20,7 +20,8 @@ app.get('/', (req, res) =>
 // route hotdog page
 app.get('/hotdog', (req, res) => 
 {
-  res.sendFile(path.join(__dirname, '/public/hotdog.html'));
+  console.log("Fetching hotdogs");
+ // res.sendFile(path.join(__dirname, '/public/hotdog.html'));
 });
 
 
