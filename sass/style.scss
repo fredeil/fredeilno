@@ -67,9 +67,9 @@
 /* BG */
 
 	#bg {
-		// @include vendor-property('animation', 'bg #{$duration-bg} linear infinite');
-		// @include vendor-property('backface-visibility', 'hidden');
-		// @include vendor-property('transform', 'translate3d(0,0,0)');
+		@include vendor-property('animation', 'bg #{$duration-bg} linear infinite');
+		 @include vendor-property('backface-visibility', 'hidden');
+		 @include vendor-property('transform', 'translate3d(0,0,0)');
 		background-color: #348cb2;
 		background-image: url('images/bg.jpg');
 		background-position: bottom left;
